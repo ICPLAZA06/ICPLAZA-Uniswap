@@ -23,22 +23,22 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: String } = {
   4: 'rinkeby.',
   5: 'goerli.',
   42: 'kovan.',
-  9000: 'ict' //new
+  9000: '' //new
 }
 
 export function getEtherscanLink(chainId: ChainId, data: string, type: 'transaction' | 'token' | 'address'): string {
-  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`
+  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}browsetest.ic-plaza.org`
 
   switch (type) {
     case 'transaction': {
-      return `${prefix}/tx/${data}`
+      return `${prefix}/dealInfo/${data}`
     }
     case 'token': {
-      return `${prefix}/token/${data}`
+      return `${prefix}/tokens/detail/${data}`
     }
     case 'address':
     default: {
-      return `${prefix}/address/${data}`
+      return `${prefix}/tokens/addressdetail/${data}`
     }
   }
 }

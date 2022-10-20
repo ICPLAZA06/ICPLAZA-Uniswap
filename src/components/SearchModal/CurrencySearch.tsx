@@ -55,6 +55,7 @@ export function CurrencySearch({
   // if they input an address, use it
   const isAddressSearch = isAddress(searchQuery)
   const searchToken = useToken(searchQuery)
+  console.log("===searchToken",searchToken);
 
   useEffect(() => {
     if (isAddressSearch) {
@@ -137,6 +138,7 @@ export function CurrencySearch({
   )
 
   const selectedListInfo = useSelectedListInfo()
+  console.log("===selectedListInfo",selectedListInfo);
 
   return (
     <Column style={{ width: '100%', flex: '1 1' }}>
